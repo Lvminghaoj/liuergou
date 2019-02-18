@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>f放开手脚买吧</title>
+    <link rel="shortcut icon" href="http://i.vanclimg.com/common/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/car.css">
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <script src="../lib/common.js"></script>
+    <script src="../js/car.js"></script>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            unta()
+            function unta() {
+                var uid = cookie.get('psw'); //从cookie读出来的用户编号
+                var name = cookie.get('usn');
+                if (name) {
+                    $('.enen111').html(name);
+                    $('.denglu').html(` <a href="##" class="denglu">用户退出</a>`);
+                    $('.denglu').css('color', 'orangered');
+                    $('.zhuce').html(` <a href="##" class="zhuce">用户更改</a>`);
+                    $('.zhuce').css('color', 'orangered');
+                }
+            }
+            $('.denglu').click(function () {
+                var now = new Date();
+                now.setDate(now.getDate() - 7);
+                var val1 = cookie.get('usn');
+                var val2 = cookie.get('psw');
+                cookie.remove('psw', val2, { expries: now });
+                cookie.remove('usn', val1, { expries: now });
+                location.href = 'index.html';
+            });
+        }
+    </script>
+    <section id="box">
+        <section id="box1">
+            <section class="box1">
+                <a href="index.html"></a>
+            </section>
+            <section class="box2">
+                <span>您好，</span>
+                <span class="enen111">dsanjkdsjdkjddjjd</span>
+                <div class="hezi">
+                    <span class="denglu">sdsds</span>
+                    <span class="shu">|</span>
+                    <span class="zhuce">sdsds</span>
+                </div>
+                <span class="gudu">帮助中心</span>
+            </section>
+            <!-- 最后写 -->
+        </section>
+        <section id="box2">
+            <section class="three">
+                <em>1.我的购物车</em>
+                <span>2.填写核对信息单</span>
+                <span>3.成功提交订单</span>
+            </section>
+        </section>
+        <section id="box3">
+            <h2>我的购物车</h2>
+        </section>
+        <section id="box4">
+            <span>温馨提示：</span>
+            1.选购清单中的商品无法保留库存，请您及时结算。2.商品的价格和库存将以订单提交时为准。3.促销活动满减优惠将均摊至商品小计中。
+        </section>
+        <section id="box5">
+            <section class="box5">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="ppp">&nbsp</th>
+                            <th class="ooo">
+                                <span>全选</span>
+                            </th>
+                            <th class="iii"></th>
+                            <th class="uuu"> 商品名称</th>
+                            <th class="yyy">尺寸</th>
+                            <th class="ttt">单价</th>
+                            <th class="rrr">数量</th>
+                            <th class="eee">优惠</th>
+                            <th class="www">小计</th>
+                            <th class="qqq">操作</th>
+                        </tr>
+                    </thead>
+                </table>
+            </section>
+            <section class="box6">
+                <table>
+                    <thead id="trds">
+                        <!-- <tr>
+                            <th class="title-white">&nbsp</th>
+                            <th class="che">
+                                <input type="checkbox" class="check">
+                            </th>
+                            <th class="kong">
+                                <img src="../img/6375086-1j201709181534480233.jpg" alt="">
+                            </th>
+                            <th class="name">
+                                羽绒服 无缝锁温智能发热鹅绒服 黑色
+                            </th>
+                            <th class="size">XXL</th>
+                            <th class="money">￥1299.00</th>
+                            <th class="num">
+                                <div class="prev">-</div>
+                                <input type="text" value="1" class="num1">
+                                <div class="next">+</div>
+                            </th>
+                            <th class="youhui">-</th>
+                            <th class="xiaoji">￥1299.00</th>
+                            <th class="con">
+                                <div class="del">删除</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="title-white">&nbsp</th>
+                            <th class="che">
+                                <input type="checkbox" class="check">
+                            </th>
+                            <th class="kong">
+                                <img src="../img/6375086-1j201709181534480233.jpg" alt="">
+                            </th>
+                            <th class="name">
+                                羽绒服 无缝锁温智能发热鹅绒服 黑色
+                            </th>
+                            <th class="size">XXL</th>
+                            <th class="money">￥1299.00</th>
+                            <th class="num">
+                                <div class="prev">-</div>
+                                <input type="text" value="1" class="num1">
+                                <div class="next">+</div>
+                            </th>
+                            <th class="youhui">-</th>
+                            <th class="xiaoji">￥1299.00</th>
+                            <th class="con">
+                                <div class="del">删除</div>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="title-white">&nbsp</th>
+                            <th class="che">
+                                <input type="checkbox" class="check">
+                            </th>
+                            <th class="kong">
+                                <img src="../img/6375086-1j201709181534480233.jpg" alt="">
+                            </th>
+                            <th class="name">
+                                羽绒服 无缝锁温智能发热鹅绒服 黑色
+                            </th>
+                            <th class="size">XXL</th>
+                            <th class="money">￥1299.00</th>
+                            <th class="num">
+                                <div class="prev">-</div>
+                                <input type="text" value="1" class="num1">
+                                <div class="next">+</div>
+                            </th>
+                            <th class="youhui">-</th>
+                            <th class="xiaoji">￥1299.00</th>
+                            <th class="con">
+                                <div class="del">删除</div>
+                            </th>
+                        </tr> -->
+                    </thead>
+                </table>
+            </section>
+        </section>
+        <section id="box6">
+            <section class="box6">
+                <input type="checkbox">
+                <span class="yes"> 全选</span>
+                <span class="dels"> 删除</span>
+                <span class="zong">数量总计:
+                    <em>0</em>
+                    件
+                </span>
+            </section>
+            <section class="box6_bottom">
+                <span class="enen">产品金额总计(不含运费):
+                    <em></em>
+                </span>
+            </section>
+            <section class="box6_left">
+
+            </section>
+            <section class="box6_right">
+
+            </section>
+        </section>
+        <section id="box7">
+            Copyright 2007 - 2019 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11010102000579号
+            出版物经营许可证新出发京批字第直110138号
+        </section>
+        <div class="box10">
+            您的购物车中没有商品，请你先
+            <a href="eee.html">选购商品>></a>
+        </div>
+        <section id="box8">
+            <section class="box8_left"></section>
+            <section class="box8_center"></section>
+            <section class="box8_right"></section>
+        </section>
+        <!-- <div id="box9">
+            <p>确定删除此商品吗?</p>
+            <p>
+                <span class="block">确定</span>
+                <span class="none">取消</span>
+            </p>
+            <span class="bottom_san"></span>
+        </div> -->
+
+    </section>
+
+</body>
+
+</html>

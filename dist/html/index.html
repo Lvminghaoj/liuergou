@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到凡客优品</title>
+    <!-- <link rel="shortcut icon" href="http://i.vanclimg.com/common/favicon/favicon.ico" type="image/x-icon" /> -->
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <script src="../lib/common.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../lib/swiper.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/swiper.css">
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var s1 = new Swiper('.swiper-container', {
+                autoplay: { //自动轮播+延时两秒
+                    delay: 2000,
+                    disableOnInteraction: false
+                },
+                loop: true,//无缝回路轮播
+                speed: 500,//切换速度
+                navigation: {//上下按钮
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {//焦点跟随
+                    el: '.swiper-pagination',
+                    clickable: true,//点击焦点跳到指定图片
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';//生成焦点数字
+                    }
+                },
+                mousewheel: true//滚动滑轮可以切图
+
+            });
+
+            var oBox = document.getElementById('swiper-container');
+
+            oBox.onmouseover = function () {//鼠标经过停止
+                s1.autoplay.stop();
+            }
+
+            oBox.onmouseout = function () {//鼠标经过离开
+                s1.autoplay.start();
+            }
+
+            unta()
+            function unta() {
+                var uid = cookie.get('psw'); //从cookie读出来的用户编号
+                var name = cookie.get('usn');
+                if (name) {
+                    $('#enen').html(name);
+                    $('.denglu').html(` <a href="##" class="denglu">用户退出</a>`);
+                    $('.denglu').css('color', 'orangered');
+                    $('.zhuce').html(` <a href="index.html" class="zhuce">用户更改</a>`);
+                    $('.zhuce').css('color', 'orangered');
+                }
+            }
+            $('.denglu').click(function () {
+                var now = new Date();
+                now.setDate(now.getDate() - 7);
+                var val1 = cookie.get('usn');
+                var val2 = cookie.get('psw');
+                cookie.remove('psw', val2, { expries: now });
+                cookie.remove('usn', val1, { expries: now });
+                location.href = 'index.html';
+            });
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <div id="box">
+        <div id="box00" onclick='topFunction()'></div>
+        <!-- box2 是头部导航 -->
+        <div id="box2">
+            <div class="box">
+                <!-- 头部的右边盒子 -->
+                <span class="biaoti">您好，</span>
+                <span id="enen" style="font-size: 13px">欢迎光临你好</span>
+                <!-- 标题的语句 -->
+                <span id="yuan">
+                    <!-- 登录注册 -->
+                    <a href="login.html" class="denglu">登录</a>
+
+                    <span class="shu">|</span>
+                    <a href="reg.html" class="zhuce">注册</a>
+                </span>
+                <span class="dingdan">
+                    <a href="Javascript:void(0)">我的订单</a>
+                </span>
+                <img src="../img/notice.png" alt="" class="img">
+                <span class="guang">网站广告</span>
+                <!-- 网站广告 -->
+                <img src="../img/w1.jpg" alt="" class="w1">
+                <img src="../img/w2.jpg" alt="" class="w2">
+            </div>
+        </div>
+        <!-- box3是下面的input -->
+        <div id="box3">
+            <div class="box4">
+                <input type="text" value="搜“日式免烫衬衫”，体验与众不同" id="tex"><button></button>
+                <!-- js已经完善 -->
+                <div class="active" id="shoppingCarNone">
+                    <p>
+                        <a id="shoppingcar_link" href="car.html" class="shopborder track cartab">购物车(<span
+                                car_product_total="shoppingCar_product_totalcount">0</span>)</a>
+                        <s></s>
+                    </p>
+                    <!-- 购物车点击事件 最后添加 -->
+                </div>
+                <!-- 购物车的按钮 -->
+                <!-- 购物车下面的数据 -->
+                <div class="car_bottom">
+                    <p>热门搜索：
+                        <a href="">免谈衬衫</a>
+                        <a href="">羽绒服</a>
+                        <a href="">外套</a>
+                        <a href="">熊本熊</a>
+                        <a href="">运动户外</a>
+                        <a href="">帆布鞋</a>
+                        <a href="">水柔棉</a>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- box4二级导航 -->
+        <div id="box4">
+            <ul id="ulli">
+                <li class="fanke">
+                    <a href=""></a>
+                </li>
+                <li>
+                    <a href="">首页</a>
+                    <span class="shu"></span>
+                </li>
+                <li class="liis">
+                    <a href="">衬衫</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul class="liis">
+                            <li>免烫</li>
+                            <li>易打理</li>
+                            <li>休闲</li>
+                            <li>高支</li>
+                            <li>法兰绒</li>
+                            <li>牛津纺</li>
+                            <li>青年布</li>
+                            <li>牛仔</li>
+                            <li>麻</li>
+                            <li>水洗棉</li>
+                            <li>泡泡纱</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">T桖</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul class="liis">
+                            <li>欧飞鸿</li>
+                            <li>山鸟叔</li>
+                            <li>好小猪</li>
+                            <li>剪纸猪</li>
+                            <li>赵老师的猪</li>
+                            <li>熊本熊</li>
+                            <li>水柔棉T</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">羽绒服</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>短袖羽绒服</li>
+                            <li>长袖羽绒服</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">卫衣</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>熊本熊</li>
+                            <li>开衫</li>
+                            <li>连帽</li>
+                            <li>圆领</li>
+                            <li>水柔棉</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">外套</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>运动户外</li>
+                            <li>皮肤衣</li>
+                            <li>西服</li>
+                            <li>C9设计款</li>
+                            <li>夹克</li>
+                            <li>nautilus</li>
+                            <li>大衣</li>
+                            <li>羽绒服</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">针织衫</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>空调衫</li>
+                            <li>棉袄衫</li>
+                            <li>羊毛衫</li>
+                            <li>羊绒衫</li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li class="liis">
+                    <a href="list.html">裤装</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>沙滩裤</li>
+                            <li>针织裤</li>
+                            <li>休闲裤</li>
+                            <li>牛仔裤</li>
+                            <li>运动裤</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">鞋</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>复古跑鞋</li>
+                            <li>帆布鞋</li>
+                            <li>休闲鞋</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="list.html">家居配饰</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>床品套件</li>
+                            <li>被子</li>
+                            <li>枕</li>
+                            <li>家居服</li>
+                            <li>家居鞋</li>
+                            <li>背提包</li>
+                            <li>拉杆箱</li>
+                            <li>皮带钱包</li>
+                            <li>帽子</li>
+                            <li>毛巾</li>
+                            <li>内衣袜品</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- box5 轮播图 -->
+        <div id="box5">
+            <div class="swiper-container" id="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background: url(../img/1200-535.jpg) center;"></div>
+                    <div class="swiper-slide" style="background: url(../img/1200x535.jpg) center"></div>
+                    <div class="swiper-slide" style="background: url(../img/1200-5351.jpg) center"></div>
+                    <div class="swiper-slide" style="background: url(../img/535g.jpg) center;"></div>
+                    <div class="swiper-slide" style="background: url(../img/535gg.jpg) center;"></div>
+                    <div class="swiper-slide" style="background:url(../img/5351.jpg) center;;"></div>
+                </div>
+                <img src="../img/535g.jpg" alt="">
+                <!--按钮-->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!--分页-->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- 下面的横条 -->
+        <div id="box6">
+            <div class="left">充 100 返 100</div>
+            <div class="right">
+                <span> 11.11 获奖名单</span>
+            </div>
+        </div>
+        <div id="box7"></div>
+        <!-- 这里要跳转详情页 还没有弄 -->
+        <div id="box8">
+            <ul>
+                <li>
+                    <img src="../img/6384063-1j201812281501444097.jpg" alt="">
+                    <p>T桖 剪纸猪 2 白色</p>
+                    <p> <del>￥118</del></p>
+                    <span class="money">￥78</span>
+                    <span class="dazhe">充值后
+                        <span class="num">39</span>
+                        元
+                    </span>
+                </li>
+                <li>
+                    <img src="../img/6375158-1j201709190939204939 (1).jpg" alt="">
+                    <p>凡客棉线绒 绞花套衫 男款 米白色</p>
+                    <p> <del>￥358</del></p>
+                    <span class="money">￥118</span>
+                    <span class="dazhe">充值后
+                        <span class="num">59</span>
+                        元
+                    </span>
+                </li>
+                <li>
+                    <img src="../img/6378806-1j201710261055374067.jpg" alt="">
+                    <p>凡客棉线绒 绞花套衫 男款 深蓝色</p>
+                    <p> <del>￥328</del></p>
+                    <span class="money">￥198</span>
+                    <span class="dazhe">充值后
+                        <span class="num">99</span>
+                        元
+                    </span>
+                </li>
+                <li>
+                    <img src="../img/6373824-1j201709151927089726.jpg" alt="">
+                    <p>凡客 棉麻休闲西服 男款 黑色</p>
+                    <p> <del>￥478</del></p>
+                    <span class="money">￥198</span>
+                    <span class="dazhe">充值后
+                        <span class="num">99</span>
+                        元
+                    </span>
+                </li>
+                <li>
+                    <img src="../img/6377950-1j201709181637233065.jpg" alt="">
+                    <p>牛津纺 夹克修身 C9 男款 粉色</p>
+                    <p> <del>￥298</del></p>
+                    <span class="money">￥138</span>
+                    <span class="dazhe">充值后
+                        <span class="num">69</span>
+                        元
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div id="box9"></div>
+        <!-- 这里也是要跳转详情页的 -->
+        <div id="box10">
+            <ul id="ulss">
+                <!-- <li>
+                    <img src="../img/1.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/xhsm_03.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/xhsm_05.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/xhsm_15.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/xhsm_17.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/pcxp_17.jpg" alt="">
+                </li>
+                <li>
+                    <img src="
+                    ../img/pcxp_15.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/pcxp_13.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/pcxp_11.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/2.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/3.jpg" alt="">
+                </li>
+                <li>
+                    <img src="../img/4.jpg" alt="">
+                </li> -->
+            </ul>
+        </div>
+        <div id="box11">
+            优选推荐
+        </div>
+        <div id="box12">
+            <ul>
+                <li class="pic_one">
+                    <img src="../img/pc-4.0.jpg" alt="">
+                    <h3>
+                        <span>充值购买更优惠</span>
+                        4.0日式免烫衬衫
+                    </h3>
+                </li>
+                <li class="pic_two">
+                    <div>
+                        <img src="../img/pc02.jpg" alt="">
+                        <h3>
+                            <span>充值购买相当于
+                                <em>69</em>
+                                元起
+                            </span>
+                            牛津纺衬衫
+                        </h3>
+                    </div>
+                    <div>
+                        <img src="../img/pc03.jpg" alt="">
+                        <h3>
+                            <span>充值购买更优惠</span>
+                            复合双层绒卫衣
+                        </h3>
+                    </div>
+                </li>
+                <li class="pic_three">
+                    <img src="../img/pc-wt-10.jpg" alt="">
+                    <h3>
+                        <span>
+                            充值购买更优惠
+                        </span>
+                        外套
+                    </h3>
+                </li>
+            </ul>
+        </div>
+        <div id="box13">
+            <ul>
+                <li class="pic_one1">
+                    <img src="../img/xxx.jpg" alt="">
+                    <h3>
+                        <span>充值购买更优惠</span>
+                        羽绒服
+                    </h3>
+                </li>
+                <li class="pic_two2">
+                    <div>
+                        <img src="../img/pc06.jpg" alt="">
+                        <h3>
+                            <span>充值购买更优惠
+                            </span>
+                            熊本熊卫衣
+                        </h3>
+                    </div>
+                    <div>
+                        <img src="../img/pc07.jpg" alt="">
+                        <h3>
+                            <span>充值购买更优惠</span>
+                            针织衫
+                        </h3>
+                    </div>
+                </li>
+                <li class="pic_three3">
+                    <img src="../img/pc08.jpg" alt="">
+                    <h3>
+                        <span>
+                            充值购买更优惠
+                        </span>
+                        户外运动
+                    </h3>
+                </li>
+            </ul>
+        </div>
+        <div id="box14">
+            下装推荐
+        </div>
+        <div id="box15">
+            <ul>
+                <li><img src="../img/pc12.jpg" alt="">
+                    <h3>
+                        <span>充值购买相当于 <em>39</em> 元起
+                        </span>休闲裤
+                    </h3>
+                </li>
+                <li><img src="../img/pc-zzk-08.jpg" alt="">
+                    <h3>
+                        <span>充值购买相当于 <em>69</em> 元起
+                        </span>休闲裤
+                    </h3>
+                </li>
+                <li><img src="../img/xxk.jpg" alt="">
+                    <h3>
+                        <span>充值购买相当于 <em>79</em> 元起
+                        </span>休闲裤
+                    </h3>
+                </li>
+                <li><img src="../img/22.jpg" alt="">
+                    <h3>
+                        <span>充值购买相当于 <em>39</em> 元起
+                        </span>休闲裤
+                    </h3>
+                </li>
+            </ul>
+        </div>
+        <div class="box15">
+            <h3>更多精品</h3>
+            <ul class="ullis">
+                <li><img src="../img/pc14.jpg" alt=""></li>
+                <li><img src="../img/wz.jpg" alt=""></li>
+                <li><img src="../img/pc-wp.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="box15">
+            <ul class="ullis">
+                <li><img src="../img/pc16.jpg" alt=""></li>
+                <li><img src="../img/pc13.jpg" alt=""></li>
+                <li><img src="../img/pc18.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div id="box16">
+            <div class="box_top">
+                <ul>
+                    <li>
+                        <p class="online_pc">
+                            <img src="../img/onlinecustomer.png" alt="">
+                        </p>
+                        <p class="online_time">7X9小时在线客服</p>
+                    </li>
+                    <li>
+                        <p class="online_pc">
+                            <img src="../img/seven.png" alt="">
+                        </p>
+
+                        <p>7天内退货</p>
+                        <p>购物满199元免运费</p>
+                    </li>
+                    <li class="twocode">
+                        <p>
+                            <img src="../img/2014_8_29_16_39_33_7709.jpg" alt="">
+                        </p>
+                        <p>扫描下载
+                            <em>凡客</em>
+                            客户端
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="box_bottom">
+                <ul>
+                    <li>关于凡客</li>
+                    <li>新手指南</li>
+                    <li>配送范围及时间</li>
+                    <li>支付方式</li>
+                    <li>售后服务</li>
+                    <li class="none">帮助中心</li>
+                </ul>
+            </div>
+        </div>
+        <h3></h3>
+        <div id="box17">
+
+        </div>
+        <div id="only">
+            <div class="onlys"></div>
+            <div class="onlylike">
+                <img src="../img/1200x535.jpg" alt="">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

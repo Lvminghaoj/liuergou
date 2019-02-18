@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>T桖 剪纸猪 5 黑色 -男装 VANCL</title>
+    <link rel="shortcut icon" href="http://i.vanclimg.com/common/favicon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/goods.css">
+    <script src="../lib/jquery-1.10.1.min.js"></script>
+    <script src="../lib/common.js"></script>
+    <script src="../js/goods.js"></script>
+
+</head>
+<style>
+    *{margin: 0;padding: 0;}
+ul,li { list-style:none; } 
+img{ border:0; outline: none;}
+
+
+/* .wrap{
+    width: 1200px;
+	margin: 100px auto 0;
+} */
+/*图片放大板块开始*/
+.imgdet{
+    position: relative;
+    height: 460px;
+    width: 1200px;
+	margin: 100px auto 0;
+    background: #fff;
+}
+.imgdet .imglist{
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 84px;
+    /* height: 460px; */
+    height: 100%;
+    overflow: hidden;
+}
+.imgdet .imglist ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0;
+}
+.imgdet .imglist ul li{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    margin-bottom: 10px;
+}
+.imgdet .imglist ul li:last-of-type{
+    margin-bottom: 0;
+}
+.imgdet .imglist ul .actives{
+    border: 2px solid #f00;
+}
+.imgdet .imglist ul li img{
+    width: 100%;
+    height: 100%;
+}
+.imgdet .imgpart{
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    width: 460px;
+    height: 460px;
+}
+.imgdet .imgpart .pic{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.imgdet .imgpart .pic .magnify{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    cursor: move;
+    background-color: #fff;
+    opacity: .3;
+    filter:alpha(opacity=30);
+}
+.imgdet .imgpart .pic img{
+    width: 100%;
+    height: 100%;
+}
+/* .imgdet .imgpart:hover .bigpic{
+    display: block;
+}
+.imgdet .imgpart:hover .magnify{
+    display: block;
+} */
+.imgdet .imgpart .bigpic{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: -470px;
+    width: 460px;
+    height: 460px;
+    z-index: 333;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+.imgdet .imgpart .bigpic>img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 920px;
+    height: 920px;
+}
+</style>
+
+<script type="text/javascript">
+    window.onload = function () {
+        unta()
+        function unta() {
+            var uid = cookie.get('psw'); //从cookie读出来的用户编号
+            var name = cookie.get('usn');
+            if (name) {
+                $('#enen').html(name);
+                $('.denglu').html(` <a href="##" class="denglu">用户退出</a>`);
+                $('.denglu').css('color', 'orangered');
+                $('.zhuce').html(` <a href="##" class="zhuce">用户更改</a>`);
+                $('.zhuce').css('color', 'orangered');
+            }
+        }
+        $('.denglu').click(function () {
+            var now = new Date();
+            now.setDate(now.getDate() - 7);
+            var val1 = cookie.get('usn');
+            var val2 = cookie.get('psw');
+            cookie.remove('psw', val2, { expries: now });
+            cookie.remove('usn', val1, { expries: now });
+            location.href = 'index.html';
+        });
+    }
+
+
+</script>
+
+<body>
+    <div id="box">
+        <!-- box2 是头部导航 -->
+        <div id="box2">
+            <div class="box">
+                <!-- 头部的右边盒子 -->
+                <span class="biaoti">您好，</span>
+                <span id="enen" style="font-size: 13px">欢迎光临你好</span>
+                <!-- 标题的语句 -->
+                <span id="yuan">
+                    <!-- 登录注册 -->
+                    <a href="login.html" class="denglu">登录</a>
+
+                    <span class="shu">|</span>
+                    <a href="reg.html" class="zhuce">注册</a>
+                </span>
+                <span class="dingdan">
+                    <a href="Javascript:void(0)">我的订单</a>
+                </span>
+                <img src="../img/notice.png" alt="" class="img">
+                <span class="guang">网站广告</span>
+                <!-- 网站广告 -->
+                <img src="../img/w1.jpg" alt="" class="w1">
+                <img src="../img/w2.jpg" alt="" class="w2">
+            </div>
+        </div>
+        <!-- box3是下面的input -->
+        <div id="box3">
+            <div class="box4">
+                <input type="text" value="搜“日式免烫衬衫”，体验与众不同" id="tex"><button></button>
+                <!-- js已经完善 -->
+                <div class="active" id="shoppingCarNone">
+                    <p>
+                        <a id="shoppingcar_link" href="car.html" class="shopborder track cartab">购物车(<span
+                                car_product_total="shoppingCar_product_totalcount">0</span>)</a>
+                        <s></s>
+                    </p>
+                    <!-- 购物车点击事件 最后添加 -->
+                </div>
+                <!-- 购物车的按钮 -->
+                <!-- 购物车下面的数据 -->
+                <div class="car_bottom">
+                    <p>热门搜索：
+                        <a href="">免谈衬衫</a>
+                        <a href="">羽绒服</a>
+                        <a href="">外套</a>
+                        <a href="">熊本熊</a>
+                        <a href="">运动户外</a>
+                        <a href="">帆布鞋</a>
+                        <a href="">水柔棉</a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- box4二级导航 -->
+        <div id="box4">
+            <ul id="ulli">
+                <li class="fanke">
+                    <a href="index.html"></a>
+                </li>
+                <li>
+                    <a href="">首页</a>
+                    <span class="shu"></span>
+                </li>
+                <li class="liis">
+                    <a href="">衬衫</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>免烫</li>
+                            <li>易打理</li>
+                            <li>休闲</li>
+                            <li>高支</li>
+                            <li>法兰绒</li>
+                            <li>牛津纺</li>
+                            <li>青年布</li>
+                            <li>牛仔</li>
+                            <li>麻</li>
+                            <li>水洗棉</li>
+                            <li>泡泡纱</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">T桖</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>欧飞鸿</li>
+                            <li>山鸟叔</li>
+                            <li>好小猪</li>
+                            <li>剪纸猪</li>
+                            <li>赵老师的猪</li>
+                            <li>熊本熊</li>
+                            <li>水柔棉T</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">羽绒服</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>短袖羽绒服</li>
+                            <li>长袖羽绒服</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">卫衣</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>熊本熊</li>
+                            <li>开衫</li>
+                            <li>连帽</li>
+                            <li>圆领</li>
+                            <li>水柔棉</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">外套</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>运动户外</li>
+                            <li>皮肤衣</li>
+                            <li>西服</li>
+                            <li>C9设计款</li>
+                            <li>夹克</li>
+                            <li>nautilus</li>
+                            <li>大衣</li>
+                            <li>羽绒服</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">针织衫</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>空调衫</li>
+                            <li>棉袄衫</li>
+                            <li>羊毛衫</li>
+                            <li>羊绒衫</li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li class="liis">
+                    <a href="">裤装</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>沙滩裤</li>
+                            <li>针织裤</li>
+                            <li>休闲裤</li>
+                            <li>牛仔裤</li>
+                            <li>运动裤</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">鞋</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>复古跑鞋</li>
+                            <li>帆布鞋</li>
+                            <li>休闲鞋</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="liis">
+                    <a href="">家居配饰</a>
+                    <span class="shu"></span>
+                    <div class="none" style='display:none'>
+                        <span></span>
+                        <ul>
+                            <li>床品套件</li>
+                            <li>被子</li>
+                            <li>枕</li>
+                            <li>家居服</li>
+                            <li>家居鞋</li>
+                            <li>背提包</li>
+                            <li>拉杆箱</li>
+                            <li>皮带钱包</li>
+                            <li>帽子</li>
+                            <li>毛巾</li>
+                            <li>内衣袜品</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <section id="box5">
+            <span>首页 > 男装 > 针织衫 > 套头针织衫 > 长袖套头衫 > 凡客棉线衫 绞花套衫 男款</span>
+        </section>
+        <section id="box6">
+            <!-- <span>凡客棉线衫 绞花套衫 男款 蓝色
+            </span> -->
+            <!-- <ul>
+                <li>选购指南</li>
+                <li>模特搭配</li>
+                <li>版型工艺</li>
+                <li>设计细节</li>
+                <li>洗条保养</li>
+                <li>评论</li>
+                <li class="one">提问</li>
+            </ul> -->
+        </section>
+        <section id="box7">
+            <section class="box7_left">
+                <div class="imgdet wrap">
+                    <!-- 左侧图片列表 -->
+                    <div class="imglist">
+                        <ul id="imglists">
+                            <li class="actives">
+                                <img src="../img/6378690-1j201711031613492136.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="../img/6377950-1j201709181637233065.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="../img/6375466-1j201703291442422570.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="../img/6373824-1j201709151927089726.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="imgpart">
+                        <!-- 图片展示 -->
+                        <div class="pic">
+                            <!-- <img src="../img/111111.png" alt=""> -->
+                            <!-- 镜片 -->
+                            <!-- <div class="magnify"></div> -->
+                        </div>
+                        <!-- 放大后的图片, 放大后的图片的尺寸要设置为展示图片的倍数（2倍）-->
+                        <div class="bigpic">
+                            <!-- <img src="../img/6378690-1j201711031613492136.jpg" alt=""> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="box7_right">
+                <!-- <p>特惠价：￥
+                    <em>138.00</em>
+                    充100返100，点击充值
+                </p>
+                <span id="stree">
+                    颜色：
+                    <div>
+                        <img src="../img/1200x535.jpg" alt="">
+                        砖红混色
+                    </div>
+                </span>
+                <span>尺码：
+                    <div class="pries">XXL</div>
+                </span>
+                <span class="num">数量：
+                    <select name="" id="" value="99">
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                        <option value="1">4</option>
+                        <option value="1">5</option>
+                        <option value="1">6</option>
+                        <option value="1">7</option>
+                        <option value="1">8</option>
+                        <option value="1">9</option>
+                        <option value="1">10</option>
+                        <option value="1">11</option>
+                    </select>
+                    <span>余量有限</span>
+                </span> -->
+                <!-- <p class="big">
+                    已选：米白色，XXL
+                    <b>库存紧张</b>
+                </p> -->
+                <!-- <div class="bottom_left">立即购买</div>
+                <div class="bottom_right"></div>
+                <section id="promotion">
+                    <section class="bottom">
+                        <h4>
+                            <span>优惠提示</span>
+                        </h4>
+                        <ul>
+                            <li>
+                                <span>免邮</span>
+                                全场购物满199元免运费
+                            </li>
+                        </ul>
+                    </section>
+                </section> -->
+            </section>
+        </section>
+        <section id="box8"></section>
+        <h1>选购指南</h1>
+        <section id="box9">
+            <section class="box9"></section>
+        </section>
+        <section id="box10">
+            <section class="box10">
+                <p>此款为常规款，根据自己平时习惯穿着的尺码选择即可</p>
+                <p>模特穿着尺码L 模特身高189cm 体重76kg 胸围98cm 腰围75cm 臂围96cm</p>
+            </section>
+        </section>
+        <section id="box11"></section>
+        <section id="box12">
+            <section class="box12"></section>
+        </section>
+        <h1>模特搭配</h1>
+        <section id="box13"></section>
+        <section id="box14"></section>
+        <section id="box15"></section>
+        <section id="box16"></section>
+        <section id="box17"></section>
+        <section id="box20"></section>
+        <section id="box18">
+            <span>最新评论(
+                <span class="span1">17</span>
+                )
+            </span>
+            <input type="radio" checked="checked" id="radios">
+            <label for="radios" style="margin-right:5px">全部评论</label>
+            <input type="radio" id="radioss">
+            <label for="radioss">
+                <span style="font-weight:500">图片(1)</span>
+            </label>
+            <section class="box18">
+                我要评论
+            </section>
+        </section>
+        <section id="box19">
+            <section class="box19">
+                <section class="one_one">
+                    <div class="one_left">
+                        <section class="one_top">
+                            <p>质量很好，购物愉快</p>
+                            <span class="time">2019-01-06</span>
+                        </section>
+                        <section class="one_bottom">
+                            <span>颜色：米白色</span>
+                            <span>尺码：XXL</span>
+                            <span>身高：173cm</span>
+                            <span>体重：85kg</span>
+                            <span class="plise">
+                                <尺码合适>
+                            </span>
+                        </section>
+                    </div>
+                    <div class="one_right">
+                        <span class="trank">
+                            1510*****85
+                        </span>
+                        <span class="kong"></span>
+                        <div class="pc"></div>
+                    </div>
+                    <section class="one_one">
+                        <div class="one_left">
+                            <section class="one_top">
+                                <p>质量很好，购物愉快</p>
+                                <span class="time">2019-01-06</span>
+                            </section>
+                            <section class="one_bottom">
+                                <span>颜色：米白色</span>
+                                <span>尺码：XXL</span>
+                                <span>身高：173cm</span>
+                                <span>体重：85kg</span>
+                                <span class="plise">
+                                    <尺码合适>
+                                </span>
+                            </section>
+                        </div>
+                        <div class="one_right">
+                            <span class="trank">
+                                1510*****85
+                            </span>
+                            <span class="kong"></span>
+                            <div class="pc"></div>
+                        </div>
+                        <section class="one_one">
+                            <div class="one_left">
+                                <section class="one_top">
+                                    <p>质量很好，购物愉快</p>
+                                    <span class="time">2019-01-06</span>
+                                </section>
+                                <section class="one_bottom">
+                                    <span>颜色：米白色</span>
+                                    <span>尺码：XXL</span>
+                                    <span>身高：173cm</span>
+                                    <span>体重：85kg</span>
+                                    <span class="plise">
+                                        <尺码合适>
+                                    </span>
+                                </section>
+                            </div>
+                            <div class="one_right">
+                                <span class="trank">
+                                    1510*****85
+                                </span>
+                                <span class="kong"></span>
+                                <div class="pc"></div>
+                            </div>
+                            <section class="one_one">
+                                <div class="one_left">
+                                    <section class="one_top">
+                                        <p>质量很好，购物愉快</p>
+                                        <span class="time">2019-01-06</span>
+                                    </section>
+                                    <section class="one_bottom">
+                                        <span>颜色：米白色</span>
+                                        <span>尺码：XXL</span>
+                                        <span>身高：173cm</span>
+                                        <span>体重：85kg</span>
+                                        <span class="plise">
+                                            <尺码合适>
+                                        </span>
+                                    </section>
+                                </div>
+                                <div class="one_right">
+                                    <span class="trank">
+                                        1510*****85
+                                    </span>
+                                    <span class="kong"></span>
+                                    <div class="pc"></div>
+                                </div>
+                                <section class="one_one">
+                                    <div class="one_left">
+                                        <section class="one_top">
+                                            <p>质量很好，购物愉快</p>
+                                            <span class="time">2019-01-06</span>
+                                        </section>
+                                        <section class="one_bottom">
+                                            <span>颜色：米白色</span>
+                                            <span>尺码：XXL</span>
+                                            <span>身高：173cm</span>
+                                            <span>体重：85kg</span>
+                                            <span class="plise">
+                                                <尺码合适>
+                                            </span>
+                                        </section>
+                                    </div>
+                                    <div class="one_right">
+                                        <span class="trank">
+                                            1510*****85
+                                        </span>
+                                        <span class="kong"></span>
+                                        <div class="pc"></div>
+                                    </div>
+                                    <section class="one_one">
+                                        <div class="one_left">
+                                            <section class="one_top">
+                                                <p>质量很好，购物愉快</p>
+                                                <span class="time">2019-01-06</span>
+                                            </section>
+                                            <section class="one_bottom">
+                                                <span>颜色：米白色</span>
+                                                <span>尺码：XXL</span>
+                                                <span>身高：173cm</span>
+                                                <span>体重：85kg</span>
+                                                <span class="plise">
+                                                    <尺码合适>
+                                                </span>
+                                            </section>
+                                        </div>
+                                        <div class="one_right">
+                                            <span class="trank">
+                                                1510*****85
+                                            </span>
+                                            <span class="kong"></span>
+                                            <div class="pc"></div>
+                                        </div>
+                                        <section class="one_one">
+                                            <div class="one_left">
+                                                <section class="one_top">
+                                                    <p>质量很好，购物愉快</p>
+                                                    <span class="time">2019-01-06</span>
+                                                </section>
+                                                <section class="one_bottom">
+                                                    <span>颜色：米白色</span>
+                                                    <span>尺码：XXL</span>
+                                                    <span>身高：173cm</span>
+                                                    <span>体重：85kg</span>
+                                                    <span class="plise">
+                                                        <尺码合适>
+                                                    </span>
+                                                </section>
+                                            </div>
+                                            <div class="one_right">
+                                                <span class="trank">
+                                                    1510*****85
+                                                </span>
+                                                <span class="kong"></span>
+                                                <div class="pc"></div>
+                                            </div>
+                                            <section class="one_one">
+                                                <div class="one_left">
+                                                    <section class="one_top">
+                                                        <p>质量很好，购物愉快</p>
+                                                        <span class="time">2019-01-06</span>
+                                                    </section>
+                                                    <section class="one_bottom">
+                                                        <span>颜色：米白色</span>
+                                                        <span>尺码：XXL</span>
+                                                        <span>身高：173cm</span>
+                                                        <span>体重：85kg</span>
+                                                        <span class="plise">
+                                                            <尺码合适>
+                                                        </span>
+                                                    </section>
+                                                </div>
+                                                <div class="one_right">
+                                                    <span class="trank">
+                                                        1510*****85
+                                                    </span>
+                                                    <span class="kong"></span>
+                                                    <div class="pc"></div>
+                                                </div>
+
+                                            </section>
+                                        </section>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <section id="box21">
+            <section class="box21_top">
+                <span>最新提问(共
+                    <span class="fish">0</span>
+                    条)</span>
+                <section class="box21">我要提问</section>
+            </section>
+            <section class="box21_bottom">
+                <section class="box21_bottom1">
+                    <p>暂无最新提问</p>
+                    <p>暂无最新提问</p>
+                </section>
+            </section>
+        </section>
+        <div id="box22">
+            <div class="box_top">
+                <ul>
+                    <li>
+                        <p class="online_pc">
+                            <img src="../img/onlinecustomer.png" alt="">
+                        </p>
+                        <p class="online_time">7X9小时在线客服</p>
+                    </li>
+                    <li>
+                        <p class="online_pc">
+                            <img src="../img/seven.png" alt="">
+                        </p>
+
+                        <p>7天内退货</p>
+                        <p>购物满199元免运费</p>
+                    </li>
+                    <li class="twocode">
+                        <p>
+                            <img src="../img/2014_8_29_16_39_33_7709.jpg" alt="">
+                        </p>
+                        <p>扫描下载
+                            <em>凡客</em>
+                            客户端
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <div class="box_bottom">
+                <ul>
+                    <li>关于凡客</li>
+                    <li>新手指南</li>
+                    <li>配送范围及时间</li>
+                    <li>支付方式</li>
+                    <li>售后服务</li>
+                    <li class="color11">帮助中心</li>
+                </ul>
+            </div>
+        </div>
+        <h3></h3>
+        <div id="box23">
+
+        </div>
+        <div id="box24">
+            <span class="red">已经成功加入到购物车
+
+                <span class="cha">X</span>
+            </span>
+            <div class="carss">进入购物车</div>
+        </div>
+
+    </div>
+</body>
+
+</html>
